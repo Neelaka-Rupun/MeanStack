@@ -8,8 +8,10 @@
       ngModel
       required
       minlength="5"
+      placeholder=" Post Title"
       #title="ngModel">
       <mat-error *ngIf="title.invalid">Please enter a post tilte</mat-error>
+
     </mat-form-field>
     <mat-form-field>
       <textarea
@@ -19,8 +21,10 @@
       ngModel
       required
       minlength="5"
+      placeholder="Post Content "
       #content="ngModel"></textarea>
       <mat-error *ngIf="content.invalid">Please enter a post Content</mat-error>
+
     </mat-form-field>
     <button
     mat-raised-button color="primary"
