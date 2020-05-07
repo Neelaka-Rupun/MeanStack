@@ -3,6 +3,20 @@
   margin-top: 1%;
 }
 
+
+mat-spinner {
+  margin: auto;
+}
+
 .info-text {
   text-align: center;
+}
+
+.post-image {
+  width: 100%;
+}
+
+.post-image img {
+  width: 100%;
+  box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.5 );
 }
