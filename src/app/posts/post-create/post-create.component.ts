@@ -5,7 +5,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Post } from '../post.model';
 import { reduce } from 'rxjs/operators';
-import { mineType } from "./mime-type.validator"
+import { mineType } from './mime-type.validator';
 
 
 @Component({
