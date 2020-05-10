@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
-import { PostService } from '../posts.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+
 import { Post } from '../post.model';
-import { reduce } from 'rxjs/operators';
-import { mineType } from "./mime-type.validator"
+import { PostService } from '../posts.service';
+import { mineType } from './mime-type.validator';
 
 
 @Component({
