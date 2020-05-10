@@ -34,7 +34,7 @@ router.post("/signup", (req, res, next) => {
 router.post("/login", (req, res, next) => {
   let fetchedUser;
   User.findOne({ email: req.body.email })
-    .then(user => { 
+    .then(user => {
       if (!user) {
         return res.status(401).json({
           message: 'Authentication Failed..!'
@@ -60,7 +60,8 @@ router.post("/login", (req, res, next) => {
         });
       //returing the token
       res.status(200).json({
-        token: token
+        token: token,
+        expiresIn: 3600
       });
     })
     .catch(err => {
