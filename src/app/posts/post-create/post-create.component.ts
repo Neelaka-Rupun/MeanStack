@@ -3,7 +3,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
 import { Post } from '../post.model';
+<<<<<<< HEAD
 import { PostService } from '../posts.service';
+=======
+import { reduce } from 'rxjs/operators';
+>>>>>>> master
 import { mineType } from './mime-type.validator';
 
 

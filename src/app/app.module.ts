@@ -5,12 +5,18 @@ import {
   MatButtonModule,
   MatCardModule,
   MatExpansionModule,
+<<<<<<< HEAD
   MatInputModule,
   MatProgressSpinnerModule,
   MatToolbarModule,
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+=======
+  MatProgressSpinnerModule,
+  MatPaginatorModule
+} from '@angular/material'; // unlocking the all the input related component
+>>>>>>> master
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -43,7 +49,8 @@ import { AuthInterceptor } from './auth/auth-intercetor';
     MatToolbarModule,
     MatExpansionModule,
     HttpClientModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatPaginatorModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor , multi: true}],
   bootstrap: [AppComponent]
