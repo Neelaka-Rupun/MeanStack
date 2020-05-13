@@ -22,7 +22,8 @@ export class PostService {
             title: post.title,
             content: post.content,
             id: post._id,
-            imagePath: post.imagePath
+            imagePath: post.imagePath,
+            creator: post.creator
           };
         }), maxPosts: postData.maxPosts};
       }))
@@ -55,7 +56,8 @@ export class PostService {
   }
 
   getPost(id: string) {
-    return this.httpClient.get<{ _id: string, title: string, content: string, imagePath: string }>('http://localhost:3000/api/posts/' + id);
+    // tslint:disable-next-line: max-line-length
+    return this.httpClient.get<{ _id: string, title: string, content: string, imagePath: string, creator: string }>('http://localhost:3000/api/posts/' + id);
   }
 
   updatePost(id: string, title: string, content: string, image: File | string) {
@@ -71,7 +73,8 @@ export class PostService {
         id: id,
         title: title,
         content: content,
-        imagePath: image
+        imagePath: image,
+        creator: null
       };
     }
     this.httpClient.put('http://localhost:3000/api/posts/' + id, postData)

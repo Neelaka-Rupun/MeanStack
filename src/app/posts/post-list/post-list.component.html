@@ -8,7 +8,7 @@
       <img [src]="post.imagePath" [alt]="post.title">
     </div>
     <p> {{ post.content }}</p>
-    <mat-action-row *ngIf="userIsAuthenticated">
+    <mat-action-row *ngIf="userIsAuthenticated && userId === post.creator">
       <a mat-button color= "primary" [routerLink]="['/edit', post.id]">EDIT</a>
       <button *ngIf="userIsAuthenticated" (click)="onDelete(post.id)" mat-button color = "warn" >DELETE</button>
     </mat-action-row>
