@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { AuthData } from '../module/auth-data.model';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
+import { error } from 'protractor';
 
 
 @Injectable({
@@ -35,8 +36,10 @@ export class AuthService {
   createUser(email: string, password: string) {
     const authData: AuthData = { email: email, password: password };
     this.httpClient.post('http://localhost:3000/api/user/signup', authData)
-      .subscribe(responce => {
-        console.log(responce);
+      .subscribe(() => {
+        this.router.navigate(['/login']);
+      }, error => {
+        this.atuhStatusListener.next(false);
       });
   }
 
@@ -57,6 +60,8 @@ export class AuthService {
           this.saveAuthData(token, expirationDate, this.userId);
           this.router.navigate(['/']);
         }
+      }, error => {
+        this.atuhStatusListener.next(false);
       });
   }
 

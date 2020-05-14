@@ -145,6 +145,11 @@ router.post('', checkAuth, multer({storage: storage}).single("image") , (req, re
         id: createdPost._id,
       }
     });
+  })
+  .catch( error => {
+    res.status(500).json({
+    message: "Creating a post faild"
+    });
   });
 });
 
@@ -167,6 +172,11 @@ router.post('', checkAuth, multer({storage: storage}).single("image") , (req, re
      } else {
       res.status(401).json({message: "Not Autherized" });
      }
+    })
+    .catch( error => {
+      res.status(500).json({
+        message: "Couldn't update the Post!"
+      });
     });
   });
 
@@ -191,6 +201,11 @@ postQuery
         posts: featchedPosts,
         maxPosts: count
       })
+    })
+    .catch( error =>{
+      res.status(500).json({
+        message: "Fetching posts failed!"
+      });
     });
 });
 
@@ -201,6 +216,11 @@ postQuery
       } else {
         res.status(404).json({message: 'Post not found!'});
       }
+    })
+    .catch(error => {
+      res.status(500).json({
+        message: "Fetching post failed"
+      })
     });
   });
 
@@ -211,6 +231,10 @@ router.delete('/:id', checkAuth, (req, res, next) => {
      } else {
       res.status(401).json({message: "Not Autherized" });
      }
+  }).catch(error => {
+    res.status(500).json({
+      message: "Post Delete failed"
+    });
   });
 });
 
