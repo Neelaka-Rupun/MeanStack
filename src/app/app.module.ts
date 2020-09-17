@@ -11,6 +11,7 @@ import { ErrorComponent } from './error/error.component';
 import { HeaderComponent } from './header/header.component';
 import { PostModule } from './post/post.module';
 import { AppRoutingModule } from './routing/routing.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AppRoutingModule } from './routing/routing.module';
     BrowserAnimationsModule,
     HttpClientModule,
     AngularMaterialModule,
+    RouterModule,
     PostModule,
 
   ],

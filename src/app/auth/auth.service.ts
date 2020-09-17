@@ -41,7 +41,7 @@ export class AuthService {
     const authData: AuthData = { email: email, password: password };
     this.httpClient.post( BACKEND_URL + '/signup', authData)
       .subscribe(() => {
-        this.router.navigate(['/login']);
+        this.router.navigate(['auth/login']);
       }, error => {
         this.atuhStatusListener.next(false);
       });
